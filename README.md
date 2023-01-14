@@ -1,2 +1,2 @@
 # cuddly-disco
-cocktail recipie website
+cocktail recipe website
