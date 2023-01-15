@@ -1,10 +1,31 @@
 # cuddly-disco
 cocktail recipe website
 
+
 #docker build -t cocktails .
 #docker run -p 8080:80 -p 8443:443 -v ${PWD}:/usr/local/apache2/htdocs cocktails
 #docker stop trusting_carver <- container name
 #docker rmi -f container:tag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
