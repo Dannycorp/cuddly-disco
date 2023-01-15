@@ -1,10 +1,21 @@
 ---
 version: '3'
 services:
-  web:
-    build: .
+  web_dev:
+    build:
+      context: .
+      target: dev
     ports:
       - "8080:80"
       - "8443:443"
+    volumes:
+      - .:/usr/local/apache2/htdocs
+  web_prod:
+    build:
+      context: .
+      target: prod
+    ports:
+      - "8081:80"
+      - "8444:443"
     volumes:
       - .:/usr/local/apache2/htdocs
