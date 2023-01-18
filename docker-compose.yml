@@ -2,7 +2,7 @@
 version: '3'
 networks:
   newasgard:
-    driver: macvlan
+    driver: ipvlan
     driver_opts:
       parent: enp0s3
     ipam:
@@ -21,8 +21,7 @@ services:
       - .:/usr/local/apache2/htdocs
     networks:
       newasgard:
-        aliases:
-          - 192.168.1.17
+        ipv4_address: 192.168.1.17
   web_prod:
     build:
       context: .
@@ -32,4 +31,6 @@ services:
       - "8444:443"
     volumes:
       - .:/usr/local/apache2/htdocs
-#new feature branch macvlan created as promiscous mode required hardware changes. Still works well though. 
+    networks:
+      newasgard:
+        ipv4_address: 192.168.1.18
