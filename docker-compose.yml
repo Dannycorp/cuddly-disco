@@ -19,3 +19,4 @@ services:
       - "8444:443"
     volumes:
       - .:/usr/local/apache2/htdocs
+#new feature branch macvlan created as promiscous mode required hardware changes. Still works well though. 
