@@ -5,10 +5,7 @@ networks:
     driver: ipvlan
     driver_opts:
       parent: enp0s3
-    ipam:
-      config:
-        - subnet: 192.168.1.0/24
-          gateway: 192.168.1.254
+      mode: l3
 services:
   web_dev:
     build:
@@ -21,7 +18,7 @@ services:
       - .:/usr/local/apache2/htdocs
     networks:
       newasgard:
-        ipv4_address: 192.168.1.17
+        ipv4_address: 192.168.94.2/24
   web_prod:
     build:
       context: .
@@ -33,4 +30,4 @@ services:
       - .:/usr/local/apache2/htdocs
     networks:
       newasgard:
-        ipv4_address: 192.168.1.18
+        ipv4_address: 192.168.95.2/24
